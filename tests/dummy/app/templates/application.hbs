@@ -1,22 +1,25 @@
-<h2 id="title">Welcome to Ember.js</h2>
-{{date-picker date=mydate valueFormat='YYYY-MM-DD' onSelect='dateCalled' outputFormat="This is really %@ cool! "}}
+{{!-- <h2 id="title">Welcome to Ember.js</h2>
+{{date-picker date=mydate onSelect='chosenDate' outputFormat="This is really %@ cool! "}}
 {{mydate}}
 <hr>
 <hr>
-{{date-picker date=mydate2 valueFormat='YYYY-MM-DD' anchorField=true}}
+{{date-picker date=mydate2 anchorField=true}}
 {{mydate2}}
 <hr>
 <hr>
 
-{{date-picker date=controllerDate valueFormat='YYYY-MM-DD' anchorField=true}}
-{{controllerDate}}
-<hr>
-<hr>
-{{#date-picker date=mydate3 valueFormat='YYYY-MM-DD' inputField=false}}
+{{date-picker date=controllerDateObject anchorField=true onSelect='chosenDate'}}
+{{controllerDateObject}}
+<hr> --}}
+{{date-picker date=controllerDateString anchorField=true onSelect='chosenDate'}}
+{{controllerDateString}}
+
+{{!-- <hr>
+{{#date-picker date=mydate3 inputField=false}}
   <p class="">
     <img src="http://www.helpinghomelesscats.com/images/cat1.jpg" alt="" />
   </p>
 
 {{/date-picker}}
 {{mydate3}}
-{{outlet}}
+{{outlet}} --}}

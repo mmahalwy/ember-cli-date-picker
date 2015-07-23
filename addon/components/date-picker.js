@@ -5,7 +5,7 @@ import moment from 'moment';
 export default Ember.Component.extend({
   layout: layout,
 
-  valueFormat: 'X',
+  valueFormat: 'YYYY-MM-DD',
   format: 'YYYY-MM-DD',
   outputFormat: '',
   allowNull: false,
@@ -46,6 +46,22 @@ export default Ember.Component.extend({
     return [calendarYear + parseInt(yr[0], 10), calendarYear + parseInt(yr[1], 10)];
   }).property('yearRange'),
 
+  willInsertElement() {
+    if (moment.isMoment(this.get('date'))) {
+      return this.setDate(this.get('date'));
+    }
+
+    if (typeof this.get('date') === 'string') {
+      return this.setDate(moment(this.get('date')));
+    }
+
+    if (Ember.isBlank(this.get('date'))) {
+      return this.setDate(moment());
+    }
+
+    throw new Ember.Error('No moment object or date string is passed.');
+  },
+
   didInsertElement: function() {
     let formElement = this.$()[0];
     let that = this;
@@ -81,20 +97,15 @@ export default Ember.Component.extend({
     picker = new window.Pikaday(pickerOptions);
 
     this.set("pikadayPicker", picker);
-
-    if (moment.isMoment(this.get('date'))) {
-      this.setDate(this.get('date'));
-      return picker.setMoment(this.get('date'));
-    }
-
-    if (Ember.isBlank(this.get('date'))) {
-      this.setDate(moment());
-      return picker.setMoment(moment());
-    }
+    return picker.setMoment(this.get('date'));
   },
 
   setDate: function(date) {
     var dateString;
+
+    if (typeof date === 'string') {
+      date = moment(date);
+    }
 
     if (this.get('valueFormat') === 'date') {
       dateString = date.toDate();

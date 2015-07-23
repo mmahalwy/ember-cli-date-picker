@@ -59,6 +59,15 @@ test('it renders anchor tag', function(assert) {
   assert.equal(this.$('a.date-picker-anchor').text(), '2015-08-07');
 });
 
+test('it can have a date string passed to it', function(assert) {
+  assert.expect(1);
+
+  this.set('mydate', moment('2015-08-07').format('L'));
+
+  this.render(hbs`{{date-picker date=mydate valueFormat='YYYY-MM-DD' anchorField=true}}`);
+  assert.equal(this.$('a.date-picker-anchor').text(), '2015-08-07');
+});
+
 test('it renders block', function(assert) {
   assert.expect(2);
 

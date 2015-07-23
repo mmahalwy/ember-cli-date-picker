@@ -2,14 +2,17 @@ import Ember from 'ember';
 import moment from 'moment';
 
 export default Ember.Controller.extend({
-  controllerDate: Ember.computed(function() {
+  controllerDateObject: Ember.computed(function() {
     return moment('2015-08-07');
   }),
 
+  controllerDateString: Ember.computed(function() {
+    return moment('2015-08-07').format('L');
+  }),
+
   actions: {
-    dateCalled() {
-      console.log(this);
-      console.log(arguments);
+    chosenDate(value) {
+      console.log(value.format('L'));
     }
   }
 });
