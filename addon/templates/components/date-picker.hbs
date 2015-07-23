@@ -1,0 +1,11 @@
+{{#if showInputField}}
+  {{input type="text" value=date class="date-picker-input"}}
+{{/if}}
+
+{{#if showAnchorField}}
+  <a href="javascript:void(0)" class="date-picker-anchor date-picker-link">{{date}}</a>
+{{/if}}
+
+{{#if template}}
+  {{yield}}
+{{/if}}
