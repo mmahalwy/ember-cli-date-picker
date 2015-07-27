@@ -47,5 +47,8 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "peerDependencies": {
+    "moment": "~2.10.3"
   }
 }
