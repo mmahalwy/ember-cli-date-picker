@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-date-picker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -34,16 +34,16 @@
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-moment": "3.0.2",
-    "ember-try": "0.0.6",
-    "moment": "2.10.3"
+    "ember-try": "0.0.6"
   },
   "keywords": [
     "ember-addon"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0",
-    "ember-cli-htmlbars": "0.7.9"
+    "ember-cli-htmlbars": "0.7.9",
+    "ember-moment": "3.0.2",
+    "moment": "2.10.3"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
