@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-date-picker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -47,8 +47,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "peerDependencies": {
-    "moment": "~2.10.3"
   }
 }
