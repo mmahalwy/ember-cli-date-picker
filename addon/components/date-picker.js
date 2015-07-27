@@ -16,7 +16,7 @@ export default Ember.Component.extend({
   anchorField: false,
 
   showInputField: Ember.computed('inputField', 'anchorField', function() {
-    return this.get('inputField') && !this.get('anchorField');
+    return this.get('inputField') && !this.get('template');
   }),
 
   showAnchorField: Ember.computed('inputField', 'anchorField', function() {
