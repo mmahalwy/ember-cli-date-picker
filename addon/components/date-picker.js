@@ -90,11 +90,12 @@ export default Ember.Component.extend({
     'maxDate', 'showWeekNumber', 'isRTL', 'internationalization', 'yearSuffix',
     'showMonthAfterYear', 'numberOfMonths', 'mainCalendar'].forEach(function(f) {
       if (!Ember.isEmpty(that.get(f))) {
-        pickerOptions[f] = that.get(f);
-      }
-
-      if (f === 'internationalization') {
-        pickerOptions['i18n'] = that.get('internationalization');
+        if (f === 'internationalization') {
+          pickerOptions['i18n'] = that.get('internationalization');
+        }
+        else {
+          pickerOptions[f] = that.get(f);
+        }
       }
     });
 
